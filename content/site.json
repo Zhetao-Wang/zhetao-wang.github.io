@@ -2,16 +2,16 @@
   "_comment": "Your basic info. Edit the values below, then run: npm run dev",
   "template": "minimal",
   "name": {
-    "full": "Zhetao Wang",
+    "full": "Avery Zhetao Wang",
     "first": "Zhetao",
     "nickname": "Avery",
     "last": "Wang",
-    "display": "Avery",
-    "authorVariants": ["Zhetao Wang"]
+    "display": "Avery Zhetao Wang",
+    "authorVariants": ["Zhetao Wang", "Avery Zhetao Wang"]
   },
-  "title": "Hi there, I'm Avery",
-  "tagline": "PhD student in Statistics, table tennis enthusiast, competing in amateur tournaments frequently.",
-  "avatar": "avatar.jpg",
+  "title": "Hi there, I'm Avery Zhetao Wang",
+  "tagline": "I study statistics and play table tennis.",
+  "avatar": "avery-illustration.jpg",
   "terminal": {
     "username": "Avery",
     "rotatingSubtitles": [

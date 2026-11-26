@@ -1,14 +1,14 @@
 ---
 journeyPhases:
-  - period: "2026.9 - Present"
+  - period: "2026 – present"
     title: Ph.D. Student in Statistics
     org: Hong Kong University of Science and Technology
-    description: "Started doctoral studies in **Statistics** under the supervision of Prof. Rong Tang. My research focuses on Bayesian statistics and machine learning theory, with applications in large-scale data systems."
+    description: "I work with Prof. Rong Tang on Bayesian statistics and machine learning theory, with an interest in database systems."
     tags: [Bayesian Statistics, Machine Learning Theory, Statistical Computing, PhD Research]
-  - period: "2022 - 2026"
+  - period: "2022 – 2026"
     title: B.S. in Mathematics
     org: Zhejiang University
-    description: "Completed undergraduate studies in Mathematics, building strong foundations in mathematical analysis, probability theory, and computational methods."
+    description: "I studied mathematics at Zhejiang University, focusing on analysis, probability, and computational methods."
     tags: [Mathematics, Probability Theory, Statistical Inference, ZJU]
 mentorship:
   heading: Research Group
@@ -25,4 +25,4 @@ version:
 ---
 I’m a statistics PhD student at the Hong Kong University of Science and Technology, advised by Prof. Rong Tang. I study Bayesian statistics, machine learning theory, and database systems. Previously, I studied mathematics at Zhejiang University.
 
-Outside research, I play competitive table tennis and write about everyday life on WeChat at 朝颜看天下.
+Outside research, I play competitive table tennis and write about everyday life on WeChat.
