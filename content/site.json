@@ -1,14 +1,15 @@
 {
   "_comment": "Your basic info. Edit the values below, then run: npm run dev",
+  "template": "minimal",
   "name": {
     "full": "Zhetao Wang",
     "first": "Zhetao",
-    "nickname": "Zhetao",
+    "nickname": "Avery",
     "last": "Wang",
-    "display": "Zhetao Wang",
+    "display": "Avery",
     "authorVariants": ["Zhetao Wang"]
   },
-  "title": "Hi there, I'm Zhetao Wang",
+  "title": "Hi there, I'm Avery",
   "tagline": "PhD student in Statistics, table tennis enthusiast, competing in amateur tournaments frequently.",
   "avatar": "avatar.jpg",
   "terminal": {

@@ -1,6 +1,6 @@
 {
   "_comment": "中文版站点配置",
-  "template": "terminal",
+  "template": "minimal",
   "components": {},
   "sections": [
     "hero", "bio", "selectedPublications",

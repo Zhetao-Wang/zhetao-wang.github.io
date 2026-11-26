@@ -23,11 +23,6 @@ version:
         - Personal bio and journey timeline
         - Research publications section
 ---
+I’m a statistics PhD student at the Hong Kong University of Science and Technology, advised by Prof. Rong Tang. I study Bayesian statistics, machine learning theory, and database systems. Previously, I studied mathematics at Zhejiang University.
 
-I am a Ph.D. student in Statistics at the Hong Kong University of Science and Technology (HKUST), working under the supervision of Prof. Rong Tang. My research interests lie at the intersection of **Bayesian statistics**, **machine learning theory**, and **database systems**.
-
-Prior to joining HKUST, I earned my B.S. in Mathematics from Zhejiang University (2022–2026).
-
-Beyond academia, I am a **table tennis fanatic**. I participate in amateur table tennis competitions at a very high frequency, constantly honing my skills and competing against players of all levels. The fast-paced nature of the sport, the strategic thinking required, and the sheer joy of a well-executed shot keep me hooked. Whether it's a local club match or a weekend tournament, you'll likely find me at the table.
-
-I also share my daily life on WeChat Official Account: **朝颜看天下**.
+Outside research, I play competitive table tennis and write about everyday life on WeChat at 朝颜看天下.

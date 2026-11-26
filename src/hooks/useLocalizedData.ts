@@ -12,7 +12,7 @@ import { getLocalizedSiteConfig, getLocalizedSiteOwner } from '../site.config'
  */
 export function useLocalizedData() {
   const { i18n } = useTranslation()
-  const lang = i18n.language
+  const lang = i18n.resolvedLanguage ?? i18n.language
 
   return useMemo(() => {
     const data = getLocalizedData(lang)

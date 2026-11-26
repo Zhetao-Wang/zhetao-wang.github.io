@@ -1,0 +1,40 @@
+.folio {
+  --ink: #202320;
+  --muted: #595e59;
+  --rule: #daddd7;
+  --link: #276044;
+  color: var(--ink);
+  background: #fdfefc;
+  min-height: 100vh;
+  font: 1rem/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", sans-serif;
+}
+.folio-sheet { width: min(100% - 3rem, 42rem); margin-inline: auto; }
+.folio-bar, .folio-bar nav, .folio-links { display: flex; align-items: center; }
+.folio-bar { min-height: 4.25rem; justify-content: space-between; border-bottom: 1px solid var(--rule); font-size: .9375rem; }
+.folio-bar nav, .folio-links { gap: 1.3rem; }
+.folio a, .folio summary { color: var(--link); text-decoration: underline; text-underline-offset: .23em; text-decoration-thickness: 1px; }
+.folio a:hover, .folio button:hover { color: var(--ink); }
+.folio-bar a, .folio-bar button { color: var(--muted); text-decoration: none; padding-block: .55rem; }
+.folio-bar [aria-current="page"] { color: var(--ink); text-decoration: underline; }
+.folio button { background: transparent; }
+.folio :focus-visible { outline: 2px solid var(--link); outline-offset: 4px; }
+.folio main { padding-top: clamp(2.25rem, 6vw, 4.5rem); }
+.folio h1, .folio h2 { font-family: Georgia, "Songti SC", serif; font-weight: 500; line-height: 1.15; }
+.folio h1 { font-size: clamp(2.6rem, 6vw, 3.9rem); letter-spacing: -.045em; }
+.folio h2 { font-size: 1.7rem; margin-bottom: 1.25rem; letter-spacing: -.025em; }
+.folio h3 { font-size: 1.08rem; font-weight: 600; line-height: 1.45; }
+.folio-links { margin-top: .5rem; }
+.folio-intro { margin-top: 1.65rem; font-size: 1.12rem; line-height: 1.75; }
+.folio section { margin-top: 2.5rem; padding-top: 1.65rem; border-top: 1px solid var(--rule); }
+.folio article + article { margin-top: 1.35rem; }
+.folio article p { margin-top: .25rem; color: var(--muted); }
+.folio small, .folio footer { color: var(--muted); font-size: .875rem; }
+.folio input { display: block; width: 100%; max-width: 24rem; padding: .4rem .65rem; margin: .3rem 0 1.3rem; border: 1px solid var(--rule); border-radius: .2rem; }
+.folio details { margin-top: .35rem; }
+.folio summary { cursor: pointer; width: fit-content; }
+.folio ul { padding-left: 1.3rem; }
+.folio footer { border-top: 1px solid var(--rule); padding-block: 1.25rem 2.5rem; margin-top: 3rem; }
+@media (max-width: 380px) {
+  .folio-sheet { width: calc(100% - 2rem); }
+  .folio-bar nav { gap: .8rem; }
+}

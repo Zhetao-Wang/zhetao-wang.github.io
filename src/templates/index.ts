@@ -19,10 +19,12 @@ import type { TemplateConfig } from './types'
 import type { ComponentSlots } from './slots'
 import { resolveSlots } from './context'
 import terminalTemplate from './terminal'
+import minimalTemplate from './minimal'
 
 /** All registered templates keyed by id */
 const templates: Record<string, TemplateConfig> = {
   terminal: terminalTemplate,
+  minimal: minimalTemplate,
 }
 
 /**
