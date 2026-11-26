@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react'
-import { useTranslation } from 'react-i18next'
-import { Link, NavLink, useLocation } from 'react-router-dom'
+import { Navigate, useLocation } from 'react-router-dom'
 import { useLocalizedData } from '../../hooks/useLocalizedData'
 import type { LayoutProps } from '../types'
 import { withBase } from '../../utils/asset'
@@ -8,23 +7,19 @@ import { FaGithub, FaRegEnvelope } from 'react-icons/fa'
 import './minimal.css'
 
 export function Layout({ children }: LayoutProps) {
-  const { siteConfig, publications } = useLocalizedData()
-  const { t } = useTranslation()
-  const { pathname } = useLocation()
-  useEffect(() => { window.scrollTo(0, 0) }, [pathname])
+  const { siteConfig } = useLocalizedData()
+  const { hash, pathname } = useLocation()
+  useEffect(() => {
+    if (pathname === '/' && hash) {
+      document.getElementById(hash.slice(1))?.scrollIntoView()
+    }
+  }, [pathname, hash])
   useEffect(() => {
     document.title = siteConfig.name.display
   }, [siteConfig])
   return (
     <div className="folio">
       <div className="folio-sheet">
-        <header className="folio-bar">
-          <NavLink end to="/">{t('nav.home')}</NavLink>
-          <nav aria-label={t('nav.navigation')}>
-            {siteConfig.features.experience && <NavLink to="/experience">{t('nav.experience')}</NavLink>}
-            {siteConfig.features.publications && publications.length > 0 && <NavLink to="/publications">{t('nav.publications')}</NavLink>}
-          </nav>
-        </header>
         <main>{children}</main>
         <footer>© {siteConfig.name.display}</footer>
       </div>
@@ -33,7 +28,7 @@ export function Layout({ children }: LayoutProps) {
 }
 
 export function Home() {
-  const { siteConfig, about, projects } = useLocalizedData()
+  const { siteConfig, about, projects, publications } = useLocalizedData()
   const [, ...personal] = about.journey.split(/\n+/).filter(Boolean)
   return (
     <>
@@ -69,6 +64,20 @@ export function Home() {
           </article>
         ))}
       </section>
+      {siteConfig.features.publications && publications.length > 0 && (
+        <section id="publications">
+          <h2>publications</h2>
+          {publications.map(item => (
+            <article key={item.id}>
+              <small>{item.year} · {item.venue}</small>
+              <h3>{item.title}</h3>
+              <p>{item.authors.join(', ')}</p>
+              {Object.entries(item.links).map(([label, url]) => <a key={label} href={url}>{label} </a>)}
+            </article>
+          ))}
+        </section>
+      )}
+      {siteConfig.features.experience && <ExperienceSection />}
       {personal.length > 0 && <section><h2>away from the desk</h2>
         {personal.map(paragraph => <p key={paragraph}>{paragraph}</p>)}
       </section>}
@@ -76,19 +85,14 @@ export function Home() {
   )
 }
 
-export function Experience() {
-  const { experience, experienceTimeline, awards } = useLocalizedData()
-  const { t } = useTranslation()
+function ExperienceSection() {
+  const { experienceTimeline, awards } = useLocalizedData()
   const [query, setQuery] = useState('')
   const entries = experienceTimeline.filter(item => [item.title, item.company, item.summary, ...item.highlights]
     .join(' ').toLowerCase().includes(query.trim().toLowerCase())).sort((a,b) => b.start.localeCompare(a.start))
   return (
     <>
-      <h1>{t('nav.experience')}</h1>
-      <section><h2>Education</h2>
-        {experience.education.courses.map(item => <article key={item.course}><small>{item.year}</small><h3>{item.course}</h3><p>{item.institution}</p></article>)}
-      </section>
-      <section><h2>Work and activities</h2>
+      <section id="experience"><h2>work and activities</h2>
         <label>Search experience<input type="search" value={query} onChange={e => setQuery(e.target.value)} /></label>
         {entries.map(item => <article key={item.title}>
           <small>{item.start.slice(0,7)} – {item.end?.slice(0,7) ?? 'present'}</small>
@@ -97,16 +101,16 @@ export function Experience() {
         </article>)}
         {!entries.length && <p>No matching experience.</p>}
       </section>
-      <section><h2>Awards</h2>{awards.map(item => <p key={item.title}><small>{item.date}</small>　{item.title}</p>)}</section>
+      <section><h2>awards</h2>{awards.map(item => <p key={item.title}><small>{item.date}</small>　{item.title}</p>)}</section>
     </>
   )
 }
 
-export function Publications() {
+export function ExperienceRedirect() {
+  return <Navigate replace to="/#experience" />
+}
+
+export function PublicationsRedirect() {
   const { publications } = useLocalizedData()
-  const { t } = useTranslation()
-  return <><h1>{t('nav.publications')}</h1>
-    {publications.length ? publications.map(item => <article key={item.id}><small>{item.year} · {item.venue}</small><h3>{item.title}</h3><p>{item.authors.join(', ')}</p>{Object.entries(item.links).map(([label,url]) => <a key={label} href={url}>{label} </a>)}</article>)
-      : <p>No publications listed yet.</p>}
-    <Link to="/">{t('nav.home')}</Link></>
+  return <Navigate replace to={publications.length ? '/#publications' : '/'} />
 }

@@ -9,13 +9,8 @@
   font: 1rem/1.4 sans-serif;
 }
 .folio-sheet { width: min(calc(100% - 2rem), 60.625rem); margin-inline: auto; }
-.folio-bar, .folio-bar nav, .folio-links { display: flex; align-items: center; }
-.folio-bar { min-height: 3.25rem; justify-content: space-between; font-size: .9375rem; }
-.folio-bar nav { gap: 1.25rem; }
 .folio a, .folio summary { color: var(--link); text-decoration: underline; text-underline-offset: .15em; }
 .folio a:hover, .folio button:hover { color: var(--ink); }
-.folio-bar a, .folio-bar button { background: transparent; color: var(--muted); text-decoration: none; padding-block: .55rem; }
-.folio-bar [aria-current="page"] { color: var(--ink); text-decoration: underline; }
 .folio :focus-visible { outline: 2px solid var(--link); outline-offset: 3px; }
 .folio main { padding-block-start: 1.25rem; }
 .folio h1, .folio h2, .folio h3 { font-family: inherit; line-height: 1.2; }
@@ -31,7 +26,7 @@
 }
 .folio-profile img { width: 15rem; height: 15rem; object-fit: cover; border-radius: 50%; }
 .folio-tagline { max-width: 19rem; margin: .35rem 0 .55rem; font-size: 1.125rem; color: var(--muted); font-style: italic; }
-.folio-links { gap: .55rem; }
+.folio-links { display: flex; align-items: center; gap: .55rem; }
 .folio-links a { display: grid; place-items: center; width: 2.5rem; height: 2.5rem; color: #444; font-size: 2rem; }
 .folio-links a:hover { color: var(--link); }
 .folio-timeline { list-style: none; margin: 0; padding: 1.75rem 0 0; border-top: 1px solid var(--rule); }
