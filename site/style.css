@@ -37,6 +37,8 @@ h3 { font-size: 1.0625rem; font-weight: 600; }
 .period { padding-top: .125rem; color: var(--muted); font-size: .875rem; text-align: right; }
 .entry { position: relative; border-left: 2px solid var(--rule); padding: 0 0 1.4rem 1.3rem; }
 .entry::before { content: ''; position: absolute; top: .2rem; left: -.375rem; width: .625rem; height: .625rem; background: #aaa; border: 2px solid white; border-radius: 50%; }
+.school { display: flex; align-items: center; gap: .5rem; }
+.school img { flex: none; object-fit: contain; }
 .entry p { margin-top: .3rem; max-width: 70ch; }
 .timeline li:last-child .entry { padding-bottom: .5rem; }
 section { margin-top: 2.3rem; }
